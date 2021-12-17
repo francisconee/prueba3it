@@ -1,0 +1,28 @@
+<div class="detalle-indicador" *ngIf="data | async as tipoindicadoreconomico">
+    <div class="valor">
+       ${{tipoindicadoreconomico.serie[0].valor | number:'1.0-0'}}
+    </div>
+
+    <ul>
+        <li>
+            <span>nombre</span>
+            <span>{{tipoindicadoreconomico.nombre}}</span>
+        </li>
+        <li>
+            <span>fecha</span>
+            <span>{{tipoindicadoreconomico.serie[1].fecha | date: 'dd-MM-yyyy, h:mm:ss'}}</span>
+        </li>
+        <li>
+            <span>unidad</span>
+            <span>{{tipoindicadoreconomico.unidad_medida}}</span>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-12 text-center mt-5">
+            <button class="btn btn-primary" [routerLink]="['']">
+                Volver a la lista
+            </button>
+        </div>
+    </div>
+</div>
